@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<PeopleRenderModel>
+@using InceptionDemo.Models.RenderModels;
+@using InceptionDemo.Models;
+@{
+    Layout = "Layout.cshtml";
+}
+<div class="row">
+    @foreach (Person person in Model.Persons)
+    {
+        <a class="personItem col-m-2" href="/@person.Url">
+            <img src="@person.Image?width=150&height=150&mode=crop" />
+            <p>@person.CharacterName</p>
+        </a>
+    }
+</div>

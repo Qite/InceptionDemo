@@ -1,0 +1,62 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<InceptionRenderModel>
+@using InceptionDemo.Models.RenderModels;
+@using InceptionDemo.Models;
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Your Page Description." />
+    <title>Umbraco Inception Demo, created by Qite</title>
+    <script src="~/Content/responsive/responsive.ie10mobilefix.min.js"></script>
+    <link href="~/Content/responsive/responsive.min.css" rel="stylesheet" />
+    <!--[if lt IE 9 &!(IEMobile)]>
+       <script src="~/Content/responsive/vendor/respond.min.js"></script>
+       <script src="~/Content/responsive/vendor/html5shiv.js"></script>
+    <![endif]-->
+    <link href="~/Content/style.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="mainContainer">
+        <header class="row container">
+            <a href="/@Model.Language.ToLower()"><h1>Umbraco Inception</h1></a>
+            <blockquote class="fade-in">&quot;@Umbraco.GetDictionaryValue(InceptionConstants.Quote)&quot;</blockquote>
+            <ul>
+                <li><a class="@(Model.Language == InceptionConstants.Dutch ? "active" : "")" href="/@Model.DutchUrl">@Umbraco.GetDictionaryValue(InceptionConstants.MenuDutch)</a></li>
+                <li><a class="@(Model.Language == InceptionConstants.English ? "active" : "")" href="/@Model.EnglishUrl">@Umbraco.GetDictionaryValue(InceptionConstants.MenuEnglish)</a></li>
+            </ul>
+        </header>
+        <div id="contentContainer" class="container row">
+            @RenderBody()
+        </div>
+        <footer class="hidden-s hidden-xs row">
+            <a class="qite" target="_blank" href="http://qite.be">&copy; Qite @DateTime.Now.Year</a>
+            <p>@Umbraco.GetDictionaryValue(InceptionConstants.FooterInfo)<a href="https://github.com/Qite/Umbraco-Inception" target="_blank">Github</a></p>
+        </footer>
+    </div>
+
+    <!-- Scripts at the bottom for improved performance. -->
+    <!-- jQuery, required for all responsive plugins. -->
+    <script src="~/Content/responsive/vendor/jquery-1.11.0.min.js"></script>
+    <script src="~/Content/responsive/responsive.min.js"></script>
+    <script>
+        $(function () {
+            var maxHeigth = $("#mainContainer").height();
+            console.log(maxHeigth);
+            var contentHeight = $("header").height() + $("#contentContainer").height();
+            console.log(contentHeight);
+            var marginFooter = (maxHeigth - contentHeight - $("footer").height());
+            console.log(marginFooter);
+            if (marginFooter > 0) {
+                console.log("?");
+                $("footer").css("margin-top", marginFooter + "px");
+            }
+
+        })
+    </script>
+</body>
+</html>

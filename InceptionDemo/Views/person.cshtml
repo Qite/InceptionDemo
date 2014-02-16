@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<PersonRenderModel>
+@using InceptionDemo.Models.RenderModels;
+@using InceptionDemo.Models;
+@{
+	Layout = "Layout.cshtml";
+}
+<h1>@Model.Person.CharacterName</h1>
+<div class="row">
+    <img class="col-m-3" alt="@Model.Person.CharacterName played by @Model.Person.RealName" src="@Model.Person.Image?width=200&height=200&mode=crop" />
+    <div class="col-m-9 descr">
+        @Html.Raw(Model.Description)
+    </div>
+</div>
+<div class="row">
+    <div class="col-m-3">
+        <a role="button" href="/@Model.Language.ToLower()">@Umbraco.GetDictionaryValue(InceptionConstants.BackButton)</a>
+    </div>
+</div>

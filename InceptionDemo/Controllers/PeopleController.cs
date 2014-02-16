@@ -1,0 +1,20 @@
+﻿using InceptionDemo.Models.RenderModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Umbraco.Web.Models;
+using Umbraco.Web.Mvc;
+
+namespace InceptionDemo.Controllers
+{
+    public class PeopleController : InceptionControllerBase
+    {
+        public override ActionResult Index(RenderModel model)
+        {
+            base.HandleLanguage();
+            return View(new PeopleRenderModel(model.Content,base._language));
+        }
+    }
+}
