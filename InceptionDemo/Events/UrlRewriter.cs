@@ -57,6 +57,7 @@ namespace InceptionDemo.Events
             content.SetValue(InceptionConstants.UmbracoUrlAliasProperty, newUmbracoUrlAlias);
         }
 
+        //Strips out all weird characters
         public static string ParseUrl(string input, bool toLowerCase = true, bool allowComas = false)
         {
             input = input.Replace(" ", "-");

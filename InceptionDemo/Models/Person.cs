@@ -28,8 +28,6 @@ namespace InceptionDemo.Models
         [UmbracoTab("English")]
         public PersonLanguageTab EnglishProperties { get; set; }
 
-
-
         public void SetCorrectUrl(string language)
         {
             if (string.IsNullOrEmpty(Url)) return;

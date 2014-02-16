@@ -9,6 +9,7 @@ using Umbraco.Web.Mvc;
 
 namespace InceptionDemo.Controllers
 {
+    //Umbraco route hijacking: http://our.umbraco.org/documentation/Reference/Mvc/custom-controllers
     public class PeopleController : InceptionControllerBase
     {
         public override ActionResult Index(RenderModel model)

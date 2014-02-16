@@ -27,11 +27,12 @@ namespace InceptionDemo.Events
         {
             //Once the content types are generated you don't need this to run every time
             //unless you did some changes to the models
-            //RegisterModels();
+            RegisterModels();
 
             ContentService.Published += ContentService_Published;
         }
 
+        //every time we save a document, we rewrite the urls
         void ContentService_Published(IPublishingStrategy sender, PublishEventArgs<IContent> e)
         {
             IContentService contentService = ApplicationContext.Current.Services.ContentService;

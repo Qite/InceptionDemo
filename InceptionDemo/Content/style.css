@@ -1,4 +1,4 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(http://fonts.googleapis.com/css?family=Lato);
 /*VARS*/
 html {
@@ -67,6 +67,9 @@ footer p {
 }
 footer .qite {
   float: left;
+}
+footer a:last-child {
+  margin-left: 4px;
 }
 a {
   text-decoration: none;

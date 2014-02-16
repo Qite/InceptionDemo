@@ -5,6 +5,7 @@ using System.Web;
 
 namespace InceptionDemo.Models
 {
+    //Because you have no idea how frustrating a typo can be
     public static class InceptionConstants
     {
         public const string Dutch = "nl";

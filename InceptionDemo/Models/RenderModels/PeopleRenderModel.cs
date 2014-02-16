@@ -9,6 +9,7 @@ using Umbraco.Inception.Extensions;
 
 namespace InceptionDemo.Models.RenderModels
 {
+    //Umbraco route hijacking: http://our.umbraco.org/documentation/Reference/Mvc/custom-controllers
     public class PeopleRenderModel:InceptionRenderModel
     {
 
