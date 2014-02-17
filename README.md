@@ -11,3 +11,6 @@ A demo project that illustrates the concepts of Umbraco Inception
 - Multi-lingual site
 - [Umbraco route Hijacking](http://our.umbraco.org/documentation/Reference/Mvc/custom-controllers)
 - [Responsive css framework](https://github.com/ResponsiveBP/Responsive)
+
+The login for the backoffice is: admin
+Password: 1234 
